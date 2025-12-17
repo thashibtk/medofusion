@@ -1,0 +1,512 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'components/header.html' %}
+    <title>Shop - Medofusion Surgical Supplies</title>
+</head>
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+    <!-- Start Breadcrumb -->
+    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Our+Products);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Our Products</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li class="active">Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Shop Area -->
+    <div class="shop-area default-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <aside class="sidebar">
+                        <!-- Categories Widget -->
+                        <div class="sidebar-item category">
+                            <div class="title">
+                                <h4>Categories</h4>
+                            </div>
+                            <div class="sidebar-info">
+                                <ul>
+                                    <li><a href="#">Modular OT Systems <span>(12)</span></a></li>
+                                    <li><a href="#">Surgical Equipment <span>(45)</span></a></li>
+                                    <li><a href="#">Hospital Furniture <span>(28)</span></a></li>
+                                    <li><a href="#">Medical Gas Systems <span>(15)</span></a></li>
+                                    <li><a href="#">HVAC Solutions <span>(8)</span></a></li>
+                                    <li><a href="#">OT Lights <span>(18)</span></a></li>
+                                    <li><a href="#">Surgical Tables <span>(22)</span></a></li>
+                                    <li><a href="#">Patient Monitors <span>(35)</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Price Filter Widget -->
+                        <div class="sidebar-item">
+                            <div class="title">
+                                <h4>Filter by Price</h4>
+                            </div>
+                            <div class="sidebar-info">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="Min Price">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="Max Price">
+                                    </div>
+                                    <button type="submit" class="btn btn-theme btn-sm">Filter</button>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <!-- Shop Top Bar -->
+                    <div class="shop-top-bar">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <p>Showing 1–12 of 183 results</p>
+                            </div>
+                            <div class="col-lg-6 text-end">
+                                <select class="form-select" style="width: auto; display: inline-block;">
+                                    <option>Default Sorting</option>
+                                    <option>Sort by Popularity</option>
+                                    <option>Sort by Price: Low to High</option>
+                                    <option>Sort by Price: High to Low</option>
+                                    <option>Sort by Latest</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products -->
+                    <div class="row">
+                        <!-- Product 1 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=OT+Light" alt="OT Light">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">LED Surgical OT Light</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹2,50,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Surgical+Table" alt="Surgical Table">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Electric Surgical Table</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹4,50,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Patient+Monitor" alt="Patient Monitor">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Multi-Parameter Patient Monitor</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹85,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Hospital+Bed" alt="Hospital Bed">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">ICU Electric Hospital Bed</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹1,20,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Anesthesia+Machine" alt="Anesthesia Machine">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Anesthesia Workstation</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹6,50,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Suction+Unit" alt="Suction Unit">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Medical Suction Unit</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹35,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=OT+Table" alt="OT Table">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Hydraulic OT Table</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹2,80,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Sterilizer" alt="Sterilizer">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Autoclave Sterilizer</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹1,80,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Ventilator" alt="Ventilator">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">ICU Ventilator</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹8,50,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Examination+Table" alt="Examination Table">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Examination Table</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹45,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Infusion+Pump" alt="Infusion Pump">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Syringe Infusion Pump</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹65,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="product-item">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/350x350/0066cc/ffffff?text=Oxygen+Concentrator" alt="Oxygen Concentrator">
+                                    <div class="overlay">
+                                        <a href="product-details.html"><i class="fas fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4><a href="product-details.html">Oxygen Concentrator 10L</a></h4>
+                                    <div class="price">
+                                        <span class="amount">₹95,000</span>
+                                    </div>
+                                    <a href="product-details.html" class="btn btn-theme btn-sm circle">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="pagination-area">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">16</a></li>
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Featured Categories -->
+    <div class="services-area default-padding bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Product <span>Categories</span></h2>
+                        <p>
+                            Browse our comprehensive range of medical equipment and surgical supplies
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center" style="background: white; padding: 30px; border-radius: 10px;">
+                        <i class="flaticon-department" style="font-size: 48px; color: #0066cc; margin-bottom: 15px;"></i>
+                        <h4>Modular OT Systems</h4>
+                        <p>Complete operation theater solutions</p>
+                        <a href="#" class="btn btn-theme btn-sm">View Products</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center" style="background: white; padding: 30px; border-radius: 10px;">
+                        <i class="flaticon-medical" style="font-size: 48px; color: #0066cc; margin-bottom: 15px;"></i>
+                        <h4>Hospital Furniture</h4>
+                        <p>Beds, tables & medical furniture</p>
+                        <a href="#" class="btn btn-theme btn-sm">View Products</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center" style="background: white; padding: 30px; border-radius: 10px;">
+                        <i class="flaticon-anesthesia" style="font-size: 48px; color: #0066cc; margin-bottom: 15px;"></i>
+                        <h4>Surgical Equipment</h4>
+                        <p>Instruments & surgical supplies</p>
+                        <a href="#" class="btn btn-theme btn-sm">View Products</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center" style="background: white; padding: 30px; border-radius: 10px;">
+                        <i class="flaticon-lung-cancer" style="font-size: 48px; color: #0066cc; margin-bottom: 15px;"></i>
+                        <h4>Medical Gas Systems</h4>
+                        <p>Pipeline & distribution systems</p>
+                        <a href="#" class="btn btn-theme btn-sm">View Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Call to Action -->
+    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Contact+Us);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h2>Need Help Finding the Right Product?</h2>
+                    <p>Our experts are here to assist you with product selection and quotations</p>
+                    <a href="contact.html" class="btn btn-light btn-lg circle">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</body>
+</html>
+
+<style>
+.product-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.product-item .thumb {
+    position: relative;
+    overflow: hidden;
+}
+.product-item .thumb img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.product-item:hover .thumb img {
+    transform: scale(1.1);
+}
+.product-item .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.product-item:hover .overlay {
+    opacity: 1;
+}
+.product-item .overlay a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #0066cc;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+.product-item .info {
+    padding: 20px;
+    text-align: center;
+}
+.product-item .info h4 {
+    margin-bottom: 10px;
+}
+.product-item .info h4 a {
+    color: #333;
+    font-size: 16px;
+}
+.product-item .info .price {
+    margin: 15px 0;
+}
+.product-item .info .price .amount {
+    color: #0066cc;
+    font-size: 20px;
+    font-weight: bold;
+}
+.shop-top-bar {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.sidebar {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+.sidebar-item {
+    margin-bottom: 30px;
+}
+.sidebar-item .title h4 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0066cc;
+}
+.sidebar-item.category ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar-item.category ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+.sidebar-item.category ul li a {
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar-item.category ul li a span {
+    color: #999;
+}
+</style>

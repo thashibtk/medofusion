@@ -1,0 +1,394 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'components/header.html' %}
+    <title>Contact Us - Medofusion</title>
+</head>
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+    <!-- Start Breadcrumb -->
+    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Contact+Us);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Contact Us</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li class="active">Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Contact Info -->
+    <div class="contact-info-area default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Get in <span>Touch</span></h2>
+                        <p>
+                            We're here to help! Reach out to us for any inquiries about our products and services
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>
+                            <a href="tel:9895896035" style="color: #333; font-size: 18px;">9895896035</a>
+                        </p>
+                        <p style="margin-top: 10px; color: #666;">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>
+                            <a href="mailto:info@medofusion.com" style="color: #333; font-size: 18px;">info@medofusion.com</a>
+                        </p>
+                        <p>
+                            <a href="mailto:surgicals@medofusion.com" style="color: #333; font-size: 18px;">surgicals@medofusion.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Working Hours</h4>
+                        <p style="color: #333; font-size: 16px;">
+                            Monday - Friday: 9:00 AM - 6:00 PM<br>
+                            Saturday: 9:00 AM - 2:00 PM<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Contact Form & Locations -->
+    <div class="contact-area bg-gray default-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="contact-form" style="background: white; padding: 40px; border-radius: 10px;">
+                        <h3>Send Us a Message</h3>
+                        <p style="margin-bottom: 30px;">Fill out the form below and we'll get back to you as soon as possible</p>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control" name="name" placeholder="Your Name *" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email *" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number *" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <select class="form-control" name="subject" required>
+                                            <option value="">Select Subject</option>
+                                            <option value="product">Product Inquiry</option>
+                                            <option value="quotation">Request Quotation</option>
+                                            <option value="installation">Installation Service</option>
+                                            <option value="support">Technical Support</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Your Message *" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-theme btn-lg circle">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Office Locations -->
+                <div class="col-lg-6">
+                    <div class="office-locations">
+                        <!-- Kozhikode Office -->
+                        <div class="location-box" style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                            <h3>Kozhikode Office</h3>
+                            <h5 style="color: #0066cc; margin-bottom: 20px;">MEDOFUSION OPC Pvt Ltd</h5>
+                            <p style="margin-bottom: 15px;">
+                                <i class="fas fa-map-marker-alt" style="color: #0066cc; margin-right: 10px;"></i>
+                                243I/B38, 3rd Floor<br>
+                                <span style="margin-left: 30px;">KKK Golf Link Tower, Chevayur</span><br>
+                                <span style="margin-left: 30px;">Kozhikode - 673017</span><br>
+                                <span style="margin-left: 30px;">Kerala, India</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-phone" style="color: #0066cc; margin-right: 10px;"></i>
+                                <a href="tel:9895896035">9895896035</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope" style="color: #0066cc; margin-right: 10px;"></i>
+                                <a href="mailto:info@medofusion.com">info@medofusion.com</a>
+                            </p>
+                            <a href="#" class="btn btn-theme btn-sm circle mt-3">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+
+                        <!-- Malappuram Office -->
+                        <div class="location-box" style="background: white; padding: 30px; border-radius: 10px;">
+                            <h3>Malappuram Office</h3>
+                            <h5 style="color: #0066cc; margin-bottom: 20px;">MEDOFUSION SURGICALS LLP</h5>
+                            <p style="margin-bottom: 15px;">
+                                <i class="fas fa-map-marker-alt" style="color: #0066cc; margin-right: 10px;"></i>
+                                B01/11/73, Near Emirates Bakery<br>
+                                <span style="margin-left: 30px;">Aripra, Malappuram</span><br>
+                                <span style="margin-left: 30px;">Kerala - 679321</span><br>
+                                <span style="margin-left: 30px;">India</span>
+                            </p>
+                            <p>
+                                <i class="fas fa-phone" style="color: #0066cc; margin-right: 10px;"></i>
+                                <a href="tel:9895896035">9895896035</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope" style="color: #0066cc; margin-right: 10px;"></i>
+                                <a href="mailto:surgicals@medofusion.com">surgicals@medofusion.com</a>
+                            </p>
+                            <a href="#" class="btn btn-theme btn-sm circle mt-3">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Map Section -->
+    <div class="google-maps default-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="google-map-area">
+                        <h3 style="text-align: center; margin-bottom: 30px;">Find Us on Map</h3>
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="map-container" style="border-radius: 10px; overflow: hidden; height: 400px; background: #f0f0f0;">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.0!2d75.7804!3d11.2588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDE1JzMxLjciTiA3NcKwNDYnNDkuNCJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                                        width="100%" 
+                                        height="400" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                                <p style="text-align: center; margin-top: 15px; font-weight: bold;">Kozhikode Office</p>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="map-container" style="border-radius: 10px; overflow: hidden; height: 400px; background: #f0f0f0;">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.0!2d76.0!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAzJzMxLjciTiA3NsKwMDAnNDkuNCJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                                        width="100%" 
+                                        height="400" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                                <p style="text-align: center; margin-top: 15px; font-weight: bold;">Malappuram Office</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start FAQ Section -->
+    <div class="faq-area default-padding bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Frequently Asked <span>Questions</span></h2>
+                        <p>
+                            Find answers to commonly asked questions about our products and services
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What products does Medofusion offer?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Medofusion offers a comprehensive range of medical equipment including modular operation theaters, surgical equipment, hospital furniture, medical gas pipeline systems, HVAC solutions, and various surgical supplies.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you provide installation services?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we provide complete installation services for all our products. Our expert team ensures proper installation and commissioning of all equipment and systems.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What is the warranty period for your products?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Warranty periods vary by product. Most surgical equipment comes with 1-2 years warranty, while modular OT systems have comprehensive warranty coverage. Please contact us for specific product warranty details.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do you provide after-sales support?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we provide comprehensive after-sales support including maintenance services, technical support, spare parts, and training for your staff on equipment operation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    How can I get a quotation for products?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can request a quotation by calling us at 9895896035, emailing us at info@medofusion.com, or filling out the contact form on this page. Our team will respond with detailed pricing information.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" style="margin-bottom: 15px; border-radius: 10px; overflow: hidden;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Do you serve areas outside Kerala?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    While our offices are in Kerala, we serve clients across India. Please contact us to discuss your requirements and location.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start CTA -->
+    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Get+Started);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact us today for expert consultation on your medical equipment needs</p>
+                    <a href="tel:9895896035" class="btn btn-light btn-lg circle" style="margin-right: 15px;">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="mailto:info@medofusion.com" class="btn btn-outline-light btn-lg circle">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</body>
+</html>
+
+<style>
+.form-control {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.form-control:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+select.form-control {
+    cursor: pointer;
+}
+textarea.form-control {
+    resize: vertical;
+}
+.btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+}
+.btn-outline-light:hover {
+    background: #fff;
+    color: #0066cc;
+}
+.accordion-button {
+    background: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+.accordion-button:not(.collapsed) {
+    background: #0066cc;
+    color: #fff;
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+</style>

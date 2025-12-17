@@ -1,0 +1,479 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'components/header.html' %}
+    <title>Medofusion - Innovative Medical Engineering Solutions</title>
+</head>
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+    <!-- Start Banner Area -->
+    <div class="banner-area banner-style-one text-light gradient-bg">
+        <div class="fixed-shape" style="background-image: url(assets/img/shape-2.png);"></div>
+        
+        <div class="banner-style-one">
+            <div class="container">
+                <div class="content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="information">
+                                <h1 class="wow fadeInUp">Innovative Medical Engineering Solutions</h1>
+                                <p class="wow fadeInUp" data-wow-delay="300ms">
+                                    Leading provider of modular operation theaters, medical systems, hospital furniture, and premium surgical equipment across Kerala and beyond.
+                                </p>
+                                <a class="btn btn-md circle btn-light animation wow fadeInUp" data-wow-delay="500ms" href="contact.html">Get in Touch</a>
+                            </div>
+                        </div>
+
+                        <div class="banner-one-thumb col-lg-5">
+                            <div class="thumb text-center">
+                                <img src="https://placehold.co/500x500/0066cc/ffffff?text=Medical+Equipment" alt="Medical Equipment">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Top Services -->
+    <div class="top-services-area default-padding-bottom">
+        <div class="services-tabs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-navigation text-center">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="tabs_1" data-bs-toggle="tab" data-bs-target="#tab_1" type="button" role="tab">
+                                        <i class="flaticon-department"></i> Modular OT
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tabs_2" data-bs-toggle="tab" data-bs-target="#tab_2" type="button" role="tab">
+                                        <i class="flaticon-24-hours"></i> Working Hours
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tabs_3" data-bs-toggle="tab" data-bs-target="#tab_3" type="button" role="tab">
+                                        <i class="flaticon-medical"></i> Medical Systems
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 thumb">
+                                    <img src="https://placehold.co/500x400/0066cc/ffffff?text=Modular+OT" alt="Modular Operation Theater">
+                                </div>
+                                <div class="col-lg-7 info">
+                                    <h2>State-of-the-Art Modular Operation Theaters</h2>
+                                    <p>
+                                        We specialize in designing and installing complete modular operation theaters that meet international standards. Our OT solutions incorporate advanced HVAC systems, surgical lighting, and medical gas pipeline systems for optimal surgical environments.
+                                    </p>
+                                    <p>
+                                        Each modular OT is customized to your facility's specific needs, ensuring compliance with infection control protocols and providing surgeons with the best possible working conditions.
+                                    </p>
+                                    <ul>
+                                        <li>ISO Class 5 & 7 Clean Room Standards</li>
+                                        <li>Integrated Medical Gas Pipeline Systems</li>
+                                        <li>Advanced Surgical Lighting Solutions</li>
+                                    </ul>
+                                    <a class="btn circle btn-theme effect btn-md" href="shop.html">Explore Products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab_2" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 thumb">
+                                    <img src="https://placehold.co/500x400/0066cc/ffffff?text=Contact+Us" alt="Working Hours">
+                                </div>
+                                <div class="col-lg-7 info">
+                                    <h2>Business Hours</h2>
+                                    <ul class="working-hours">
+                                        <li>Monday <div class="text-end"> 9:00 AM - 6:00 PM </div></li>
+                                        <li>Tuesday <div class="text-end"> 9:00 AM - 6:00 PM </div></li>
+                                        <li>Wednesday <div class="text-end"> 9:00 AM - 6:00 PM </div></li>
+                                        <li>Thursday <div class="text-end"> 9:00 AM - 6:00 PM </div></li>
+                                        <li>Friday <div class="text-end"> 9:00 AM - 6:00 PM </div></li>
+                                        <li>Saturday <div class="text-end"> 9:00 AM - 2:00 PM </div></li>
+                                        <li>Sunday <div class="text-end closed"> Closed </div></li>
+                                    </ul>
+                                    <p style="margin-top: 20px;">For urgent inquiries, please call: <strong>9895896035</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab_3" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 thumb">
+                                    <img src="https://placehold.co/500x400/0066cc/ffffff?text=Medical+Systems" alt="Medical Systems">
+                                </div>
+                                <div class="col-lg-7 info">
+                                    <h2>Comprehensive Medical Systems</h2>
+                                    <p>
+                                        Medofusion provides complete medical system solutions including HVAC systems, medical gas pipeline systems, and integrated hospital infrastructure. Our expertise ensures your facility operates at peak efficiency.
+                                    </p>
+                                    <p>
+                                        From planning to installation and maintenance, we deliver turnkey medical engineering solutions that comply with all safety regulations and industry standards.
+                                    </p>
+                                    <ul>
+                                        <li>Medical Gas Pipeline Systems (MGPS)</li>
+                                        <li>HVAC & Air Handling Units</li>
+                                        <li>Surgical Equipment Integration</li>
+                                    </ul>
+                                    <a class="btn circle btn-theme effect btn-md" href="about.html">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Services -->
+    <div class="services-area inc-icon carousel-shadow default-padding-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Our <span>Solutions</span></h2>
+                        <p>
+                            Comprehensive medical engineering solutions designed to enhance healthcare delivery and patient care outcomes
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="services-items text-center services-carousel owl-carousel owl-theme">
+                        <!-- Single Item -->
+                        <div class="item">
+                            <div class="info">
+                                <h4>
+                                    <a href="shop.html">Modular Operation Theaters</a>
+                                </h4>
+                                <div class="overlay">
+                                    <i class="flaticon-department"></i>
+                                </div>
+                                <p>
+                                    Complete turnkey solutions for modular OTs with advanced infection control, surgical lighting, and integrated medical systems designed for optimal surgical performance.
+                                </p>
+                                <a class="btn btn-border theme circle btn-md" href="shop.html">Learn More</a>
+                            </div>
+                        </div>
+                        <!-- Single Item -->
+                        <div class="item">
+                            <div class="info">
+                                <h4>
+                                    <a href="shop.html">Hospital Furniture</a>
+                                </h4>
+                                <div class="overlay">
+                                    <i class="flaticon-medical"></i>
+                                </div>
+                                <p>
+                                    Premium hospital furniture including patient beds, examination tables, surgical tables, and specialized medical furniture designed for comfort and durability.
+                                </p>
+                                <a class="btn btn-border theme circle btn-md" href="shop.html">Learn More</a>
+                            </div>
+                        </div>
+                        <!-- Single Item -->
+                        <div class="item">
+                            <div class="info">
+                                <h4>
+                                    <a href="shop.html">Surgical Equipment</a>
+                                </h4>
+                                <div class="overlay">
+                                    <i class="flaticon-anesthesia"></i>
+                                </div>
+                                <p>
+                                    High-quality surgical instruments, equipment, and supplies from leading manufacturers, ensuring precision and reliability for every procedure.
+                                </p>
+                                <a class="btn btn-border theme circle btn-md" href="shop.html">Learn More</a>
+                            </div>
+                        </div>
+                        <!-- Single Item -->
+                        <div class="item">
+                            <div class="info">
+                                <h4>
+                                    <a href="shop.html">Medical Gas Systems</a>
+                                </h4>
+                                <div class="overlay">
+                                    <i class="flaticon-lung-cancer"></i>
+                                </div>
+                                <p>
+                                    Complete medical gas pipeline systems including oxygen, nitrous oxide, medical air, and vacuum systems designed to meet all safety standards.
+                                </p>
+                                <a class="btn btn-border theme circle btn-md" href="shop.html">Learn More</a>
+                            </div>
+                        </div>
+                        <!-- Single Item -->
+                        <div class="item">
+                            <div class="info">
+                                <h4>
+                                    <a href="shop.html">HVAC Solutions</a>
+                                </h4>
+                                <div class="overlay">
+                                    <i class="flaticon-thinking"></i>
+                                </div>
+                                <p>
+                                    Specialized HVAC systems for healthcare facilities ensuring proper air filtration, temperature control, and humidity management for patient safety.
+                                </p>
+                                <a class="btn btn-border theme circle btn-md" href="shop.html">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Fun Factor -->
+    <div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light" style="background-image: url(https://placehold.co/1920x600/003366/ffffff?text=Medical+Excellence);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 item">
+                    <div class="fun-fact">
+                        <i class="flaticon-recovered"></i>
+                        <div class="timer" data-to="500" data-speed="5000">500</div>
+                        <span class="medium">Happy Clients</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 item">
+                    <div class="fun-fact">
+                        <i class="flaticon-department"></i>
+                        <div class="timer" data-to="150" data-speed="5000">150</div>
+                        <span class="medium">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 item">
+                    <div class="fun-fact">
+                        <i class="flaticon-medical"></i>
+                        <div class="timer" data-to="1000" data-speed="5000">1000</div>
+                        <span class="medium">Products Available</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 item">
+                    <div class="fun-fact">
+                        <i class="flaticon-24-hours"></i>
+                        <div class="timer" data-to="15" data-speed="5000">15</div>
+                        <span class="medium">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Why Choose Us -->
+    <div class="doctor-tips-area default-padding bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Why Choose <span>Medofusion</span></h2>
+                        <p>
+                            Committed to delivering excellence in medical engineering with innovative solutions and unparalleled customer service
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item" style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                        <i class="flaticon-department" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;"></i>
+                        <h3>Quality Assurance</h3>
+                        <p>
+                            All our products and installations meet international quality standards. We source from certified manufacturers and ensure rigorous quality control at every stage.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item" style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                        <i class="flaticon-24-hours" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;"></i>
+                        <h3>Expert Support</h3>
+                        <p>
+                            Our team of experienced medical engineers provides comprehensive support from consultation to installation and ongoing maintenance for all your medical equipment needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item" style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                        <i class="flaticon-thinking" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;"></i>
+                        <h3>Innovative Solutions</h3>
+                        <p>
+                            We stay ahead of industry trends, offering cutting-edge medical engineering solutions that enhance healthcare delivery and improve patient outcomes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Locations -->
+    <div class="doctor-area default-padding bottom-less">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Our <span>Locations</span></h2>
+                        <p>
+                            Visit us at our convenient locations in Kozhikode and Malappuram
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-items text-center">
+                <div class="row">
+                    <!-- Kozhikode Location -->
+                    <div class="col-lg-6 col-md-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <img src="https://placehold.co/500x400/0066cc/ffffff?text=Kozhikode+Office" alt="Kozhikode">
+                            </div>
+                            <div class="info">
+                                <h4>MEDOFUSION OPC Pvt Ltd</h4>
+                                <h5>Kozhikode Office</h5>
+                                <p style="margin: 15px 0;">
+                                    243I/B38, 3rd Floor<br>
+                                    KKK Golf Link Tower, Chevayur<br>
+                                    Kozhikode - 673017<br>
+                                    <strong>Ph: 9895896035</strong>
+                                </p>
+                                <div class="appoinment-btn">
+                                    <a href="contact.html">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Malappuram Location -->
+                    <div class="col-lg-6 col-md-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <img src="https://placehold.co/500x400/0066cc/ffffff?text=Malappuram+Office" alt="Malappuram">
+                            </div>
+                            <div class="info">
+                                <h4>MEDOFUSION SURGICALS LLP</h4>
+                                <h5>Malappuram Office</h5>
+                                <p style="margin: 15px 0;">
+                                    B01/11/73, Near Emirates Bakery<br>
+                                    Aripra, Malappuram<br>
+                                    Kerala - 679321<br>
+                                    <strong>Ph: 9895896035</strong>
+                                </p>
+                                <div class="appoinment-btn">
+                                    <a href="contact.html">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Testimonials -->
+    <div class="testimonials-area carousel-shadow bg-gray default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h2>Client <span>Testimonials</span></h2>
+                        <p>
+                            Hear what our satisfied clients have to say about our services and solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-items testimonial-carousel owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="content">
+                                <p>
+                                    Medofusion provided exceptional service in setting up our modular operation theater. Their attention to detail and commitment to quality exceeded our expectations. The OT has been functioning flawlessly.
+                                </p>
+                            </div>
+                            <div class="provider">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/100x100/0066cc/ffffff?text=Client" alt="Client">
+                                </div>
+                                <div class="info">
+                                    <h4>Dr. Rajesh Kumar</h4>
+                                    <h5>Hospital <span>Administrator</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="content">
+                                <p>
+                                    The surgical equipment and hospital furniture supplied by Medofusion are of outstanding quality. Their team was professional throughout the procurement and installation process.
+                                </p>
+                            </div>
+                            <div class="provider">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/100x100/0066cc/ffffff?text=Client" alt="Client">
+                                </div>
+                                <div class="info">
+                                    <h4>Sr. Maria Joseph</h4>
+                                    <h5>Nursing <span>Superintendent</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="content">
+                                <p>
+                                    We appreciate Medofusion's comprehensive approach to medical engineering. From HVAC to medical gas systems, everything was executed perfectly and on schedule.
+                                </p>
+                            </div>
+                            <div class="provider">
+                                <div class="thumb">
+                                    <img src="https://placehold.co/100x100/0066cc/ffffff?text=Client" alt="Client">
+                                </div>
+                                <div class="info">
+                                    <h4>Mohammed Basheer</h4>
+                                    <h5>Facility <span>Manager</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Newsletter -->
+    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Get+In+Touch);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h4>Get Latest Updates</h4>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <form action="#">
+                        <div class="input-group stylish-input-group">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your e-mail here">
+                            <button type="submit">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>  
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</body>
+</html>
