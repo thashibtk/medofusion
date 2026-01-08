@@ -5,7 +5,13 @@ from django.db.models import Count
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    latest_products = Product.objects.filter(is_active=True).order_by('-created_at')[:8]
+    featured_products = Product.objects.filter(is_active=True, is_featured=True)[:4]
+    context = {
+        'latest_products': latest_products,
+        'featured_products': featured_products,
+    }
+    return render(request, 'home.html', context)
 
 def about(request):
     return render(request, 'about.html')
