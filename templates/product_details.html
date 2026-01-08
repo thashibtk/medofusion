@@ -4,7 +4,7 @@
 
 <head>
     {% include 'components/header.html' %}
-    <title>LED Surgical OT Light - Medofusion</title>
+    <title>{{ product.name }} - Medofusion</title>
 </head>
 
 <body>
@@ -12,15 +12,19 @@
     {% include 'components/navbar.html' %}
 
     <!-- Start Breadcrumb -->
-    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Product+Details);">
+    <!-- Start Breadcrumb -->
+    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed">
+        <div class="banner-background" style="background-image: url('{% static 'assets/images/banner/shop.png' %}'); background-size: cover; background-position: center;">
+            <div class="blue-overlay"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1>Product Details</h1>
+                    <h1>{{ product.name }}</h1>
                     <ul class="breadcrumb">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li class="active">LED Surgical OT Light</li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'products' %}">Products</a></li>
+                        <li class="active">{{ product.name }}</li>
                     </ul>
                 </div>
             </div>
@@ -35,22 +39,24 @@
                 <div class="col-lg-6">
                     <div class="product-gallery">
                         <div class="main-image mb-3">
-                            <img id="mainImage" src="https://placehold.co/600x600/0066cc/ffffff?text=OT+Light+Main" alt="LED Surgical OT Light" style="width: 100%; border-radius: 10px;">
+                            {% if product.image %}
+                            <img id="mainImage" src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%; border-radius: 10px;">
+                            {% else %}
+                            <img id="mainImage" src="https://placehold.co/600x500/0cb8b6/ffffff?text=No+Image" alt="{{ product.name }}" style="width: 100%; border-radius: 10px;">
+                            {% endif %}
                         </div>
                         <div class="thumbnail-images">
                             <div class="row">
+                                {% if product.image %}
                                 <div class="col-3">
-                                    <img src="https://placehold.co/150x150/0066cc/ffffff?text=View+1" alt="View 1" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
+                                    <img src="{{ product.image.url }}" alt="Main View" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
                                 </div>
+                                {% endif %}
+                                {% for img in product.images.all %}
                                 <div class="col-3">
-                                    <img src="https://placehold.co/150x150/0066cc/ffffff?text=View+2" alt="View 2" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
+                                    <img src="{{ img.image.url }}" alt="View {{ forloop.counter }}" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
                                 </div>
-                                <div class="col-3">
-                                    <img src="https://placehold.co/150x150/0066cc/ffffff?text=View+3" alt="View 3" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
-                                </div>
-                                <div class="col-3">
-                                    <img src="https://placehold.co/150x150/0066cc/ffffff?text=View+4" alt="View 4" class="img-thumbnail" onclick="changeImage(this.src)" style="cursor: pointer;">
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -59,190 +65,41 @@
                 <!-- Product Info -->
                 <div class="col-lg-6">
                     <div class="product-info">
-                        <h2>LED Surgical OT Light</h2>
-                        <div class="rating mb-3">
-                            <i class="fas fa-star" style="color: #ffa500;"></i>
-                            <i class="fas fa-star" style="color: #ffa500;"></i>
-                            <i class="fas fa-star" style="color: #ffa500;"></i>
-                            <i class="fas fa-star" style="color: #ffa500;"></i>
-                            <i class="fas fa-star" style="color: #ffa500;"></i>
-                            <span style="margin-left: 10px;">(25 Reviews)</span>
-                        </div>
-                        <div class="price mb-4">
-                            <h3 style="color: #0066cc; font-weight: bold;">₹2,50,000</h3>
-                        </div>
+                        <h2>{{ product.name }}</h2>
                         <div class="description mb-4">
-                            <p>
-                                High-quality LED Surgical Operation Theater Light with advanced features for optimal illumination during surgical procedures. This state-of-the-art lighting system provides shadow-free, bright white light with adjustable intensity and color temperature.
-                            </p>
+                            {{ product.description|linebreaks }}
                         </div>
 
-                        <div class="key-features mb-4">
-                            <h4>Key Features:</h4>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> 160,000 Lux illumination</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> Color temperature: 3500K - 5000K</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> Shadow-free operation</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> LED lifespan: 50,000+ hours</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> Low heat emission</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> Easy to clean and maintain</li>
-                                <li><i class="fas fa-check-circle" style="color: #0066cc;"></i> Stepless intensity adjustment</li>
-                            </ul>
-                        </div>
 
                         <div class="product-meta mb-4">
-                            <p><strong>SKU:</strong> MOT-LIGHT-001</p>
-                            <p><strong>Category:</strong> OT Lights, Surgical Equipment</p>
-                            <p><strong>Availability:</strong> <span style="color: green;">In Stock</span></p>
-                        </div>
-
-                        <div class="quantity-cart mb-4">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="quantity">
-                                        <label>Quantity:</label>
-                                        <input type="number" value="1" min="1" class="form-control" style="width: 80px;">
-                                    </div>
-                                </div>
-                            </div>
+                            <p><strong>Category:</strong> {{ product.category.name }}</p>
                         </div>
 
                         <div class="action-buttons">
-                            <button class="btn btn-theme btn-lg circle mb-2" style="margin-right: 10px;">
-                                <i class="fas fa-shopping-cart"></i> Request Quote
-                            </button>
-                            <button class="btn btn-outline-theme btn-lg circle mb-2">
+                            <a href="https://wa.me/1234567890?text=I'm interested in {{ product.name }}" class="btn btn-theme btn-lg circle mb-2" style="margin-right: 10px;">
+                                <i class="fab fa-whatsapp"></i> Enquiry
+                            </a>
+                            <a href="tel:+911234567890" class="btn btn-outline-theme btn-lg circle mb-2">
                                 <i class="fas fa-phone"></i> Call Now
-                            </button>
+                            </a>
                         </div>
 
                         <div class="share-product mt-4">
                             <p><strong>Share:</strong></p>
-                            <a href="#" style="margin-right: 15px; color: #0066cc;"><i class="fab fa-facebook-f fa-lg"></i></a>
-                            <a href="#" style="margin-right: 15px; color: #0066cc;"><i class="fab fa-twitter fa-lg"></i></a>
-                            <a href="#" style="margin-right: 15px; color: #0066cc;"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                            <a href="#" style="margin-right: 15px; color: #0066cc;"><i class="fab fa-whatsapp fa-lg"></i></a>
+                            <a href="#" style="margin-right: 15px; color: #0cb8b6;"><i class="fab fa-facebook-f fa-lg"></i></a>
+                            <a href="#" style="margin-right: 15px; color: #0cb8b6;"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" style="margin-right: 15px; color: #0cb8b6;"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                            <a href="#" style="margin-right: 15px; color: #0cb8b6;"><i class="fab fa-whatsapp fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Product Tabs -->
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <div class="product-tabs">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">
-                                    Description
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button" role="tab">
-                                    Specifications
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">
-                                    Reviews (25)
-                                </button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" style="background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px;">
-                            <div class="tab-pane fade show active" id="description" role="tabpanel">
-                                <h4>Product Description</h4>
-                                <p>
-                                    The LED Surgical OT Light is designed to provide optimal illumination for surgical procedures. With advanced LED technology, this lighting system offers superior brightness, excellent color rendering, and minimal heat emission. The shadow-free design ensures that surgical sites are perfectly illuminated from all angles.
-                                </p>
-                                <p>
-                                    This surgical light features stepless intensity adjustment, allowing surgeons to customize the lighting according to their specific needs. The color temperature can be adjusted between 3500K and 5000K, providing flexibility for different types of procedures.
-                                </p>
-                                <p>
-                                    Built with high-quality materials and designed for easy maintenance, this OT light is an essential addition to any modern operation theater. The long LED lifespan of over 50,000 hours ensures years of reliable service with minimal maintenance requirements.
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="specifications" role="tabpanel">
-                                <h4>Technical Specifications</h4>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>Illumination</strong></td>
-                                            <td>160,000 Lux</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Color Temperature</strong></td>
-                                            <td>3500K - 5000K (Adjustable)</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Color Rendering Index (CRI)</strong></td>
-                                            <td>Ra > 95</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>LED Lifespan</strong></td>
-                                            <td>50,000+ hours</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Power Consumption</strong></td>
-                                            <td>120W</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Light Field Diameter</strong></td>
-                                            <td>120mm - 280mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Depth of Illumination</strong></td>
-                                            <td>700mm - 1400mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Voltage</strong></td>
-                                            <td>AC 220V, 50/60Hz</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Mounting Type</strong></td>
-                                            <td>Ceiling Mounted</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Warranty</strong></td>
-                                            <td>2 Years</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel">
-                                <h4>Customer Reviews</h4>
-                                <div class="review-item" style="border-bottom: 1px solid #ddd; padding: 20px 0;">
-                                    <div class="rating mb-2">
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                    </div>
-                                    <h5>Excellent Product</h5>
-                                    <p><strong>Dr. Ramesh Kumar</strong> - <em>January 15, 2025</em></p>
-                                    <p>Outstanding quality and performance. The shadow-free illumination is perfect for our surgical procedures. Highly recommended!</p>
-                                </div>
-                                <div class="review-item" style="border-bottom: 1px solid #ddd; padding: 20px 0;">
-                                    <div class="rating mb-2">
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ffa500;"></i>
-                                        <i class="fas fa-star" style="color: #ddd;"></i>
-                                    </div>
-                                    <h5>Great Value</h5>
-                                    <p><strong>Hospital Administrator</strong> - <em>December 20, 2024</em></p>
-                                    <p>Very good quality for the price. Installation was smooth and the after-sales service is excellent.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <!-- Related Products -->
+    {% if related_products %}
     <div class="services-area default-padding bg-gray">
         <div class="container">
             <div class="row">
@@ -254,74 +111,36 @@
                 </div>
             </div>
             <div class="row">
+                {% for r_product in related_products %}
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="https://placehold.co/300x300/0066cc/ffffff?text=OT+Light+Single" alt="Single Dome OT Light">
+                            {% if r_product.image %}
+                            <img src="{{ r_product.image.url }}" alt="{{ r_product.name }}">
+                            {% else %}
+                            <img src="https://placehold.co/300x300/0cb8b6/ffffff?text=No+Image" alt="{{ r_product.name }}">
+                            {% endif %}
                         </div>
                         <div class="info">
-                            <h4><a href="#">Single Dome OT Light</a></h4>
-                            <div class="price">
-                                <span class="amount">₹1,80,000</span>
-                            </div>
-                            <a href="#" class="btn btn-theme btn-sm circle">View Details</a>
+                            <h4><a href="{% url 'product-details' r_product.slug %}">{{ r_product.name }}</a></h4>
+                            <a href="{% url 'product-details' r_product.slug %}" class="shop-btn btn-theme">View Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-item">
-                        <div class="thumb">
-                            <img src="https://placehold.co/300x300/0066cc/ffffff?text=Mobile+Light" alt="Mobile OT Light">
-                        </div>
-                        <div class="info">
-                            <h4><a href="#">Mobile OT Light</a></h4>
-                            <div class="price">
-                                <span class="amount">₹1,20,000</span>
-                            </div>
-                            <a href="#" class="btn btn-theme btn-sm circle">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-item">
-                        <div class="thumb">
-                            <img src="https://placehold.co/300x300/0066cc/ffffff?text=Examination+Light" alt="Examination Light">
-                        </div>
-                        <div class="info">
-                            <h4><a href="#">Examination Light</a></h4>
-                            <div class="price">
-                                <span class="amount">₹45,000</span>
-                            </div>
-                            <a href="#" class="btn btn-theme btn-sm circle">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-item">
-                        <div class="thumb">
-                            <img src="https://placehold.co/300x300/0066cc/ffffff?text=Surgical+Table" alt="Surgical Table">
-                        </div>
-                        <div class="info">
-                            <h4><a href="#">Electric Surgical Table</a></h4>
-                            <div class="price">
-                                <span class="amount">₹4,50,000</span>
-                            </div>
-                            <a href="#" class="btn btn-theme btn-sm circle">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+    {% endif %}
 
     <!-- Call to Action -->
-    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Contact+Us);">
+    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url({% static 'assets/images/hm-products.jpg' %});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <h2>Interested in This Product?</h2>
                     <p>Contact us for detailed quotations and product information</p>
-                    <a href="contact.html" class="btn btn-light btn-lg circle">Get a Quote</a>
+                    <a href="{% url 'contact' %}" class="btn btn-light btn-lg circle">Get a Quote</a>
                 </div>
             </div>
         </div>
@@ -365,17 +184,17 @@
     margin: 15px 0;
 }
 .product-item .info .price .amount {
-    color: #0066cc;
+    color: #0cb8b6;
     font-size: 20px;
     font-weight: bold;
 }
 .btn-outline-theme {
-    border: 2px solid #0066cc;
-    color: #0066cc;
+    border: 2px solid #0cb8b6;
+    color: #0cb8b6;
     background: transparent;
 }
 .btn-outline-theme:hover {
-    background: #0066cc;
+    background: #0cb8b6;
     color: #fff;
 }
 </style>

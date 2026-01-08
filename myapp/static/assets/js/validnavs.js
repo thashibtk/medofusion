@@ -198,14 +198,32 @@
                     e.preventDefault();
                     $("nav.navbar.validnavs .side").toggleClass("on");
                     $('.navbar').toggleClass("pause-sticked");
-                    $("body").toggleClass("on-side");
+                    $("body, html").toggleClass("on-side"); // Lock both body and html
+                    $('.overlay-screen').toggleClass("opened"); // Toggle overlay
                 });
             });
-            $(".side .close-side").on("click", function(e) {
-                e.preventDefault();
+            
+            // Close sidebar function
+            function closeSidebar() {
                 $("nav.navbar.validnavs .side").removeClass("on");
                 $('.navbar').removeClass("pause-sticked");
-                $("body").removeClass("on-side");
+                $("body, html").removeClass("on-side"); // Unlock both
+                $('.overlay-screen').removeClass("opened");
+            }
+
+            $(".side .close-side").on("click", function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+
+            // Close on overlay click
+            $('.overlay-screen').on("click", function(e) {
+                e.preventDefault();
+                closeSidebar();
+                
+                // Also close mobile menu if open
+                $('.navbar-collapse').removeClass("show");
+                $(".navbar-toggle .fa").addClass("fa-bars").removeClass("fa-times"); // Reset toggle icon
             });
 
 

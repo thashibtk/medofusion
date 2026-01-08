@@ -181,7 +181,7 @@ Version: 1.0
 
 .navbar-brand>img {
 	display: block;
-	height: 50px;
+	height: 60px;
 }
 
 .navbar-toggle {
@@ -2439,12 +2439,12 @@ nav.navbar.validnavs.brand-center {
 
 	nav.navbar.validnavs.navbar-fixed .logo {
 		display: block !important;
-		max-height: 50px;
+		max-height: 60px;
 	}
 
 	.navbar-brand>img {
 		height: auto;
-		max-height: 50px;
+		max-height: 60px;
 	}
 
 	nav.navbar.validnavs.navbar-fixed .logo-display {

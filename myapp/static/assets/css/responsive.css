@@ -1134,8 +1134,10 @@ body, .banner-area, .banner-area div{
 .top-services-area .services-tabs ul.nav.nav-tabs li button {
   background: rgba(255, 255, 255, 0.1);
   width: 100%;
-  color: var(--white);
+  color: var(--white) !important;
 }
+
+
 
 .top-services-area .services-tabs ul.nav.nav-tabs li {
   display: block;

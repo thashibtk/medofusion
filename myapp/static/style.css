@@ -6,7 +6,7 @@
 	--font-heading: "DM Sans", serif;
 	--fontawesome: "Font Awesome 5 Pro";
 	--black: #000000;
-	--dark: #14457b;
+	--dark: #108785;
 	--dark-secondary: #0d3c6f;
 	--white: #ffffff;
 	--color-primary: #0cb8b6;
@@ -296,9 +296,19 @@ p {
   background-color: var(--bg-gray);
 }
 
-.bg-dark {
-  background: var(--dark) !important;
+.page-item.active .page-link {
+    background-color: #0cb8b6 !important;
+    border-color: #0cb8b6 !important;
+    color: #fff !important;
 }
+.page-link {
+    color: #0cb8b6 !important;
+  }
+
+.bg-dark {
+  background: #108785 !important;
+}
+
 
 .bg-dark-secondary {
   background: var(--dark-secondary);
@@ -460,6 +470,24 @@ p {
 	background: #E7EDF8;
 	position: relative;
 	z-index: 1;
+}
+
+.shop-btn {
+    display: inline-block;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    border-radius: 7px;
+    border: 2px solid transparent;
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    font-size: 15px;
+    letter-spacing: 0;
+    padding: 9px 25px;
+    background: #E7EDF8;
+    position: relative;
+    z-index: 1;
 }
 
 .btn:focus, .btn.active {
@@ -674,7 +702,7 @@ p {
 	height: 150px;
 	width: 115%;
 	z-index: -1;
-	background-color: var(--dark);
+	background-color: #108785;
 	-webkit-transition: all 0.25s ease-in-out;
 	transition: all 0.25s ease-in-out;
 	-webkit-transform: translateY(-45%) skew(25deg) scale(0);
@@ -770,6 +798,33 @@ p {
 	border: none;
 }
 
+/* Sidebar Interaction Fixes */
+html.on-side,
+body.on-side {
+    overflow: hidden;
+    height: 100vh; /* Force height to viewport to prevent scroll chaining */
+}
+
+.overlay-screen {
+    z-index: 9999; /* Ensure it is below sidebar but above content */
+}
+
+.validnavs .side {
+    z-index: 10000; /* Ensure it is above the overlay */
+    overscroll-behavior: contain; /* Prevent scroll chaining to body */
+}
+
+/* Fix mobile menu overlap */
+nav.navbar {
+    z-index: 1001; /* Ensure distinct layering above banner */
+    position: relative; 
+}
+
+/* Ensure mobile menu is above the overlay screen */
+nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+    z-index: 10001 !important;
+}
+
 .btn.btn-dark::after {
 	position: absolute;
 	top: 0;
@@ -829,12 +884,15 @@ p {
 	color: var(--color-heading);
 }
 
+.nav-link {
+    color: #108785 !important;
+}
+
 .btn i {
 	position: relative;
 	margin-left: 5px;
 	font-weight: 100;
 	font-size: 20px;
-	transform: rotate(-45deg);
 	top: 2px;
 }
 
@@ -1431,23 +1489,23 @@ p {
      # Bradcrumb 
 =================================================================== */
 .breadcrumb-area {
-  padding: 120px 0;
+  padding: 160px 0;
 }
 
 .breadcrumb-area .breadcrumb {
   background: transparent;
   display: inline-flex;
   margin: 0;
-  padding: 15px;
   position: relative;
   z-index: 1;
   margin-top: 20px;
   border-radius: 5px;
   overflow: hidden;
 }
-
+.accordion-button:not(.collapsed)::after {
+    background-image:unset !important;
+}
 .breadcrumb-area .breadcrumb::after {
-  background: var(--color-heading);
   content: "";
   height: 100%;
   left: 0;
@@ -1508,7 +1566,6 @@ p {
 
 .breadcrumb-area .breadcrumb li.active {
   color: var(--color-primary);
-  text-decoration: underline;
 }
 
 /* ============================================================== 
@@ -3458,7 +3515,7 @@ body,
     position: relative;
     z-index: 1;
     background: transparent;
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
 }
 
 .top-services-area .services-tabs ul.nav.nav-tabs li button.active::after {
@@ -4767,8 +4824,7 @@ body,
 }
 
 .doctor-items .info {
-  padding: 40px 30px 30px;
-  border-top: 2px solid var(--color-primary);
+  padding: 25px 30px 30px;
   background: var(--white);
 }
 
@@ -5865,20 +5921,6 @@ body,
   color: var(--color-primary);
 }
 
-.sidebar-item.category ul li a::after {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  content: "\f07b";
-  font-family: "Font Awesome 5 Pro";
-  height: 8px;
-  left: 0;
-  position: absolute;
-  width: 8px;
-  top: 10px;
-  font-weight: 100;
-}
-
 .blog-area .sidebar .sidebar-item.category li a span {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6486,7 +6528,7 @@ body,
 
 .newsletter-area h2 {
   margin-bottom: 30px;
-  font-size: 90px;
+  font-size: 50px;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;

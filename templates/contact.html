@@ -12,13 +12,17 @@
     {% include 'components/navbar.html' %}
 
     <!-- Start Breadcrumb -->
-    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Contact+Us);">
+    <!-- Start Breadcrumb -->
+    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed">
+        <div class="banner-background" style="background-image: url('{% static 'assets/images/banner/contact.png' %}'); background-size: cover; background-position: center;">
+            <div class="blue-overlay"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <h1>Contact Us</h1>
                     <ul class="breadcrumb">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
                         <li class="active">Contact</li>
                     </ul>
                 </div>
@@ -41,8 +45,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div class="icon" style="font-size: 48px; color: #0cb8b6; margin-bottom: 20px;">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <h4>Phone</h4>
@@ -53,22 +57,19 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div class="icon" style="font-size: 48px; color: #0cb8b6; margin-bottom: 20px;">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h4>Email</h4>
                         <p>
                             <a href="mailto:info@medofusion.com" style="color: #333; font-size: 18px;">info@medofusion.com</a>
                         </p>
-                        <p>
-                            <a href="mailto:surgicals@medofusion.com" style="color: #333; font-size: 18px;">surgicals@medofusion.com</a>
-                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
-                        <div class="icon" style="font-size: 48px; color: #0066cc; margin-bottom: 20px;">
+                    <div class="info-box" style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center; margin-bottom: 30px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div class="icon" style="font-size: 48px; color: #0cb8b6; margin-bottom: 20px;">
                             <i class="fas fa-clock"></i>
                         </div>
                         <h4>Working Hours</h4>
@@ -86,41 +87,27 @@
     <!-- Start Contact Form & Locations -->
     <div class="contact-area bg-gray default-padding">
         <div class="container">
+            <!-- Contact Form - Full Width -->
             <div class="row">
-                <!-- Contact Form -->
-                <div class="col-lg-6">
-                    <div class="contact-form" style="background: white; padding: 40px; border-radius: 10px;">
+                <div class="col-lg-12">
+                    <div class="contact-form" style="background: white; padding: 40px; border-radius: 10px; margin-bottom: 30px;">
                         <h3>Send Us a Message</h3>
                         <p style="margin-bottom: 30px;">Fill out the form below and we'll get back to you as soon as possible</p>
                         <form action="#">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="form-group mb-3">
                                         <input type="text" class="form-control" name="name" placeholder="Your Name *" required>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group mb-3">
-                                        <input type="email" class="form-control" name="email" placeholder="Your Email *" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="form-group mb-3">
                                         <input type="tel" class="form-control" name="phone" placeholder="Phone Number *" required>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4 col-md-12">
                                     <div class="form-group mb-3">
-                                        <select class="form-control" name="subject" required>
-                                            <option value="">Select Subject</option>
-                                            <option value="product">Product Inquiry</option>
-                                            <option value="quotation">Request Quotation</option>
-                                            <option value="installation">Installation Service</option>
-                                            <option value="support">Technical Support</option>
-                                            <option value="other">Other</option>
-                                        </select>
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email *" required>
                                     </div>
                                 </div>
                             </div>
@@ -133,57 +120,59 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
-                <!-- Office Locations -->
+            <!-- Office Locations - 50/50 -->
+            <div class="row">
+                <!-- Kozhikode Office -->
                 <div class="col-lg-6">
-                    <div class="office-locations">
-                        <!-- Kozhikode Office -->
-                        <div class="location-box" style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
-                            <h3>Kozhikode Office</h3>
-                            <h5 style="color: #0066cc; margin-bottom: 20px;">MEDOFUSION OPC Pvt Ltd</h5>
-                            <p style="margin-bottom: 15px;">
-                                <i class="fas fa-map-marker-alt" style="color: #0066cc; margin-right: 10px;"></i>
-                                243I/B38, 3rd Floor<br>
-                                <span style="margin-left: 30px;">KKK Golf Link Tower, Chevayur</span><br>
-                                <span style="margin-left: 30px;">Kozhikode - 673017</span><br>
-                                <span style="margin-left: 30px;">Kerala, India</span>
-                            </p>
-                            <p>
-                                <i class="fas fa-phone" style="color: #0066cc; margin-right: 10px;"></i>
-                                <a href="tel:9895896035">9895896035</a>
-                            </p>
-                            <p>
-                                <i class="fas fa-envelope" style="color: #0066cc; margin-right: 10px;"></i>
-                                <a href="mailto:info@medofusion.com">info@medofusion.com</a>
-                            </p>
-                            <a href="#" class="btn btn-theme btn-sm circle mt-3">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                        </div>
+                    <div class="location-box" style="background: white; padding: 30px; border-radius: 10px; height: 100%;">
+                        <h3>Kozhikode Office</h3>
+                        <h5 style="margin-bottom: 20px;">MEDOFUSION OPC Pvt Ltd</h5>
+                        <p style="margin-bottom: 15px;">
+                            <i class="fas fa-map-marker-alt" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            243I/B38, 3rd Floor<br>
+                            <span style="margin-left: 30px;">KKK Golf Link Tower, Chevayur</span><br>
+                            <span style="margin-left: 30px;">Kozhikode - 673017</span><br>
+                            <span style="margin-left: 30px;">Kerala, India</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            <a href="tel:9895896035">9895896035</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            <a href="mailto:info@medofusion.com">info@medofusion.com</a>
+                        </p>
+                        <a href="#" class="btn btn-theme btn-sm circle mt-3">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
 
-                        <!-- Malappuram Office -->
-                        <div class="location-box" style="background: white; padding: 30px; border-radius: 10px;">
-                            <h3>Malappuram Office</h3>
-                            <h5 style="color: #0066cc; margin-bottom: 20px;">MEDOFUSION SURGICALS LLP</h5>
-                            <p style="margin-bottom: 15px;">
-                                <i class="fas fa-map-marker-alt" style="color: #0066cc; margin-right: 10px;"></i>
-                                B01/11/73, Near Emirates Bakery<br>
-                                <span style="margin-left: 30px;">Aripra, Malappuram</span><br>
-                                <span style="margin-left: 30px;">Kerala - 679321</span><br>
-                                <span style="margin-left: 30px;">India</span>
-                            </p>
-                            <p>
-                                <i class="fas fa-phone" style="color: #0066cc; margin-right: 10px;"></i>
-                                <a href="tel:9895896035">9895896035</a>
-                            </p>
-                            <p>
-                                <i class="fas fa-envelope" style="color: #0066cc; margin-right: 10px;"></i>
-                                <a href="mailto:surgicals@medofusion.com">surgicals@medofusion.com</a>
-                            </p>
-                            <a href="#" class="btn btn-theme btn-sm circle mt-3">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                        </div>
+                <!-- Malappuram Office -->
+                <div class="col-lg-6">
+                    <div class="location-box" style="background: white; padding: 30px; border-radius: 10px; height: 100%;">
+                        <h3>Malappuram Office</h3>
+                        <h5 style="margin-bottom: 20px;">MEDOFUSION SURGICALS LLP</h5>
+                        <p style="margin-bottom: 15px;">
+                            <i class="fas fa-map-marker-alt" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            B01/11/73, Near Emirates Bakery<br>
+                            <span style="margin-left: 30px;">Aripra, Malappuram</span><br>
+                            <span style="margin-left: 30px;">Kerala - 679321</span><br>
+                            <span style="margin-left: 30px;">India</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            <a href="tel:9895896035">9895896035</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope" style="color: #0cb8b6; margin-right: 10px;"></i>
+                            <a href="mailto:info@medofusion.com">info@medofusion.com</a>
+                        </p>
+                        <a href="#" class="btn btn-theme btn-sm circle mt-3">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
                     </div>
                 </div>
             </div>
@@ -330,24 +319,6 @@
         </div>
     </div>
 
-    <!-- Start CTA -->
-    <div class="newsletter-area default-padding shadow theme bg-fixed text-center text-light" style="background-image: url(https://placehold.co/1920x400/003366/ffffff?text=Get+Started);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h2>Ready to Get Started?</h2>
-                    <p>Contact us today for expert consultation on your medical equipment needs</p>
-                    <a href="tel:9895896035" class="btn btn-light btn-lg circle" style="margin-right: 15px;">
-                        <i class="fas fa-phone"></i> Call Now
-                    </a>
-                    <a href="mailto:info@medofusion.com" class="btn btn-outline-light btn-lg circle">
-                        <i class="fas fa-envelope"></i> Email Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     {% include 'components/footer.html' %}
 
 </body>
@@ -361,7 +332,7 @@
     font-size: 14px;
 }
 .form-control:focus {
-    border-color: #0066cc;
+    border-color: #0cb8b6;
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
 }
@@ -377,7 +348,7 @@ textarea.form-control {
 }
 .btn-outline-light:hover {
     background: #fff;
-    color: #0066cc;
+    color: #0cb8b6;
 }
 .accordion-button {
     background: #f8f9fa;
@@ -385,7 +356,7 @@ textarea.form-control {
     font-weight: 600;
 }
 .accordion-button:not(.collapsed) {
-    background: #0066cc;
+    background: #0cb8b6;
     color: #fff;
 }
 .accordion-button:focus {

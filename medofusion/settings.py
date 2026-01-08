@@ -13,12 +13,16 @@ SECRET_KEY = 'django-insecure-jh3_po3^7zwch%xv5l$+m3w2i_)6xpl2rh0rscl7&_(p86*llm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
+    'unfold.contrib.filters',
+    'unfold.contrib.forms',
+    'unfold.contrib.inlines',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -101,6 +105,36 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Media files (User-uploaded files)
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+UNFOLD = {
+    "SITE_TITLE": "Medofusion Admin",
+    "SITE_HEADER": "Medofusion Admin",
+    "SITE_INDEX_TITLE": "Medofusion Admin",
+    "COLORS": {
+        "primary": {
+            "50": "#e0f2f1",
+            "100": "#b2dfdb",
+            "200": "#80cbc4",
+            "300": "#4db6ac",
+            "400": "#26a69a",
+            "500": "#108785",
+            "600": "#00897b",
+            "700": "#00796b",
+            "800": "#00695c",
+            "900": "#004d40",
+            "950": "#00251a",
+        },
+    },
+}
+
+
