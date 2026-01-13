@@ -11,28 +11,9 @@
 
     {% include 'components/navbar.html' %}
 
-    <!-- Start Breadcrumb -->
-    <!-- Start Breadcrumb -->
-    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed">
-        <div class="banner-background" style="background-image: url('{% static 'assets/images/banner/shop.png' %}'); background-size: cover; background-position: center;">
-            <div class="blue-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h1>{{ product.name }}</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'products' %}">Products</a></li>
-                        <li class="active">{{ product.name }}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Start Product Details -->
-    <div class="product-details-area default-padding">
+    <div class="product-details-area p-6">
         <div class="container">
             <div class="row">
                 <!-- Product Images -->

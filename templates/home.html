@@ -105,7 +105,7 @@
         /* Swiper Custom Styles */
         .swiper-section-wrapper {
             position: relative;
-            padding: 0 40px;
+            padding: 0 0.5rem;
         }
         
         .swiper {
@@ -138,92 +138,97 @@
         }
 
         .category-card {
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .category-image-wrapper {
             position: relative;
-            height: 380px;
+            height: 250px;
             border-radius: 20px;
             overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
 
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(14, 105, 103, 0.2);
-        }
-
-        .category-card img {
+        .category-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
 
-        .category-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .category-overlay {
+        .category-hover-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(14, 105, 103, 0.6) 50%, #0e6967 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            color: white;
-            transition: all 0.4s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 5;
         }
 
-        .category-card:hover .category-overlay {
-            background: linear-gradient(to bottom, transparent 0%, rgba(14, 105, 103, 0.8) 40%, #0e6967 100%);
-            padding-bottom: 40px;
+        .hover-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: #0cb8b6;
+            color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .category-card:hover .category-hover-overlay {
+            opacity: 1;
+        }
+
+        .category-card:hover .category-image-wrapper {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(14, 105, 103, 0.15);
+        }
+
+        .category-card:hover .category-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .category-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
         }
 
         .category-name {
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: white;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            transform: translateY(0);
-            transition: transform 0.4s ease;
+            color: #333;
+            margin-bottom: 0;
+            transition: color 0.3s ease;
         }
 
-        .category-description {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.5;
-            font-weight: 500;
+        .category-card:hover .category-name {
+            color: #0cb8b6;
         }
 
         .category-link {
-            color: #fff;
+            color: #0cb8b6;
             font-weight: 600;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
+            padding: 5px 15px;
             border-radius: 50px;
-            width: fit-content;
-            backdrop-filter: blur(5px);
+            background: rgba(12, 184, 182, 0.1);
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
         }
 
         .category-card:hover .category-link {
-            opacity: 1;
-            transform: translateY(0);
-            background: white;
-            color: #0e6967;
+            background: #0cb8b6;
+            color: white;
+            padding-right: 20px;
         }
 
         /* Featured Products */
@@ -232,218 +237,7 @@
             background: white;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            position: relative;
-            height: 280px;
-            overflow: hidden;
-            background: #f8f9fa;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #0cb8b6;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-category {
-            color: #0cb8b6;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .product-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .product-description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .product-sku {
-            font-size: 0.85rem;
-            color: #999;
-        }
-
-        .btn-view-product {
-            color: #0cb8b6;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .btn-view-product:hover {
-            color: #0e6967;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #0cb8b6 0%, #0e6967 100%);
-            color: white;
-        }
-
-        .trust-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .trust-stat {
-            padding: 20px;
-        }
-
-        .trust-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .trust-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: #0cb8b6;
-            font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .feature-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: white;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .cta-description {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
+        /* Styles moved to style.css */
     </style>
 </head>
 
@@ -452,132 +246,62 @@
     {% include 'components/navbar.html' %}
 
     <!-- Start Banner Area -->
-    <div class="banner-area banner-style-one text-light">
-        <div class="banner-background" style="background-image: url('{% static "assets/images/banner/main.png" %}'); background-size: cover; background-position: center;">
-            <div class="blue-overlay"></div>
-        </div>
-        
-        <div class="banner-style-one">
-            <div class="container">
-                <div class="content">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8 col-md-10 mx-auto text-center">
-                            <div class="information">
-                                <h1 class="wow fadeInUp">Innovative Medical Engineering Solutions</h1>
-                                <p class="wow fadeInUp" data-wow-delay="300ms">
-                                    Leading provider of modular operation theaters, medical systems, hospital furniture, and premium surgical equipment across Kerala and beyond.
-                                </p>
-                                <a class="btn btn-md circle btn-light animation wow fadeInUp" data-wow-delay="500ms" href="{% url 'contact' %}">Get in Touch</a>
-                            </div>
-                        </div>
-                    </div>
+    <div class="banner-slider-area">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{% static 'assets/images/home/slide/1.jpg' %}" alt="Medical Equipment">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'assets/images/home/slide/2.jpg' %}" alt="Surgical Supplies">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'assets/images/home/slide/3.jpg' %}" alt="Healthcare Solutions">
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 
     <style>
-        .banner-area {
-        position: relative;
-        min-height: 600px;
-        display: flex;
-        align-items: center;
-        }
-
-        .banner-area .banner-background {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .banner-slider-area {
             width: 100%;
-            height: 100%;
-            z-index: 1;
+            overflow: hidden;
+            border-bottom: 2px solid #f0f0f0; /* Optional separator */
         }
-
-        .banner-area .blue-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .banner-slider-area .swiper-slide img {
             width: 100%;
-            height: 100%;
-            background-color: #0e696775;
-            backdrop-filter: blur(2px); /* Blurs content behind the overlay */
-            -webkit-backdrop-filter: blur(3px); /* Safari support */
+            height: auto;
+            display: block;
+            object-fit: cover;
+            /* Optional: limit max height on very large screens if needed, e.g., max-height: 600px; */
         }
-
-        .banner-style-one {
-            position: relative;
-            z-index: 2;
-            width: 100%;
+        /* Mobile optimization if needed */
+        @media (max-width: 768px) {
+            .banner-slider-area .swiper-slide img {
+                min-height: 200px; /* Ensure visibility on small screens */
+                object-fit: cover;
+            }
         }
     </style>
 
-    <!-- Category Showcase -->
-    <section class="category-showcase">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Shop by <span style="color: #0cb8b6;">Category</span></h2>
-                <p class="section-subtitle">Explore our comprehensive range of medical equipment and solutions</p>
-            </div>
-            <div class="row">
-                {% for category in categories %}
-                <div class="col-lg-4 col-md-6">
-                    <a href="{% url 'products' %}?category={{ category.slug }}">
-                        <div class="category-card">
-                            {% if category.products.first.image %}
-                            <img src="{{ category.products.first.image.url }}" alt="{{ category.name }}">
-                            {% else %}
-                            <img src="https://placehold.co/600x700/0cb8b6/ffffff?text={{ category.name }}" alt="{{ category.name }}">
-                            {% endif %}
-                            <div class="category-overlay">
-                                <h3 class="category-name">{{ category.name }}</h3>
-                                <p class="category-description">{{ category.description|truncatewords:15 }}</p>
-                                <span class="category-link">Explore {{ category.name }} <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% empty %}
-                <!-- Fallback categories if none exist -->
-                <div class="col-lg-4 col-md-6">
-                    <a href="{% url 'products' %}">
-                        <div class="category-card">
-                            <img src="{% static 'assets/images/home/modular.jpg' %}" alt="Modular OT">
-                            <div class="category-overlay">
-                                <h3 class="category-name">Modular Operation Theaters</h3>
-                                <p class="category-description">Complete turnkey solutions for state-of-the-art operation theaters</p>
-                                <span class="category-link">Explore Category <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a href="{% url 'products' %}">
-                        <div class="category-card">
-                            <img src="{% static 'assets/images/home/furniture.jpg' %}" alt="Hospital Furniture">
-                            <div class="category-overlay">
-                                <h3 class="category-name">Hospital Furniture</h3>
-                                <p class="category-description">Premium quality beds, tables, and medical furniture</p>
-                                <span class="category-link">Explore Category <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a href="{% url 'products' %}">
-                        <div class="category-card">
-                            <img src="{% static 'assets/images/home/equip.jpg' %}" alt="Surgical Equipment">
-                            <div class="category-overlay">
-                                <h3 class="category-name">Surgical Equipment</h3>
-                                <p class="category-description">High-precision surgical instruments and equipment</p>
-                                <span class="category-link">Explore Category <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    <!-- Initialize Banner Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var bannerSwiper = new Swiper(".bannerSwiper", {
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".bannerSwiper .swiper-pagination",
+                    clickable: true,
+                },
+            });
+        });
+    </script>
 
     <!-- Featured Products -->
     <section class="featured-products">
@@ -600,16 +324,23 @@
                                     {% else %}
                                     <img src="https://placehold.co/600x600/f8f9fa/0cb8b6?text={{ product.name|truncatewords:2 }}" alt="{{ product.name }}">
                                     {% endif %}
+                                    
+                                    {% with second_image=product.images.first %}
+                                        {% if second_image %}
+                                            <img src="{{ second_image.image.url }}" class="img-hover" alt="{{ product.name }}">
+                                        {% else %}
+                                            <img src="{% static 'assets/images/product/prod1.jpg' %}" class="img-hover" alt="{{ product.name }}">
+                                        {% endif %}
+                                    {% endwith %}
+                                    
                                     <span class="product-badge">Featured</span>
                                 </div>
                                 <div class="product-info">
                                     <div class="product-category">{{ product.category.name }}</div>
                                     <h3 class="product-name">{{ product.name }}</h3>
-                                    <div class="product-footer">
-                                        <span class="product-sku">SKU: {{ product.sku }}</span>
-                                        <a href="{% url 'product-details' product.slug %}" class="btn-view-product">
-                                            View Details <i class="fas fa-arrow-right"></i>
-                                        </a>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{% url 'product-details' product.slug %}" class="btn-shop-action p-1"><i class="fas fa-eye me-1"></i> View</a>
+                                        <a href="https://wa.me/1234567890?text=I'm interested in {{ product.name }}" class="btn-shop-action p-1"><i class="fab fa-whatsapp me-2"></i> Enquiry</a>
                                     </div>
                                 </div>
                             </div>
@@ -623,50 +354,97 @@
                 <div class="swiper-button-prev featured-prev"></div>
             </div>
 
-            <div class="text-center mt-5">
+            <div class="text-center mt-3">
                 <a href="{% url 'products' %}" class="btn btn-lg circle btn-theme effect">View All Products</a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Section -->
-    <div class="fun-fact-area default-padding shadow light text-center bg-fixed text-light bg-dark">
+    <!-- Category Showcase -->
+    <section class="category-showcase">
         <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by <span style="color: #0cb8b6;">Category</span></h2>
+                <p class="section-subtitle">Explore our comprehensive range of medical equipment and solutions</p>
+            </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 item">
-                    <div class="fun-fact">
-                        <i class="flaticon-recovered"></i>
-                        <div class="timer" data-to="500" data-speed="1000">500</div>
-                        <span class="medium">Happy Clients</span>
-                    </div>
+                {% for category in categories %}
+                <div class="col-lg-4 col-md-6">
+                    <a href="{% url 'products' %}?category={{ category.slug }}">
+                        <div class="category-card">
+                            <div class="category-image-wrapper">
+                                {% if category.products.first.image %}
+                                <img src="{{ category.products.first.image.url }}" alt="{{ category.name }}">
+                                {% else %}
+                                <img src="https://placehold.co/600x700/0cb8b6/ffffff?text={{ category.name }}" alt="{{ category.name }}">
+                                {% endif %}
+                                <div class="category-hover-overlay">
+                                    <span class="hover-btn"><i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <h3 class="category-name">{{ category.name }}</h3>
+                                <span class="category-link">Explore <i class="fas fa-arrow-right ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 item">
-                    <div class="fun-fact">
-                        <i class="flaticon-department"></i>
-                        <div class="timer" data-to="150" data-speed="1000">150</div>
-                        <span class="medium">Projects Completed</span>
-                    </div>
+                {% empty %}
+                <!-- Fallback categories if none exist -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{% url 'products' %}">
+                        <div class="category-card">
+                            <div class="category-image-wrapper">
+                                <img src="{% static 'assets/images/home/modular.jpg' %}" alt="Modular OT">
+                                <div class="category-hover-overlay">
+                                    <span class="hover-btn"><i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <h3 class="category-name">Modular Operation Theaters</h3>
+                                <span class="category-link">Explore <i class="fas fa-arrow-right ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 item">
-                    <div class="fun-fact">
-                        <i class="flaticon-medical"></i>
-                        <div class="timer" data-to="1000" data-speed="1000">1000</div>
-                        <span class="medium">Products Available</span>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="{% url 'products' %}">
+                        <div class="category-card">
+                            <div class="category-image-wrapper">
+                                <img src="{% static 'assets/images/home/furniture.jpg' %}" alt="Hospital Furniture">
+                                <div class="category-hover-overlay">
+                                    <span class="hover-btn"><i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <h3 class="category-name">Hospital Furniture</h3>
+                                <span class="category-link">Explore <i class="fas fa-arrow-right ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 item">
-                    <div class="fun-fact">
-                        <i class="flaticon-24-hours"></i>
-                        <div class="timer" data-to="15" data-speed="1000">15</div>
-                        <span class="medium">Years Experience</span>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="{% url 'products' %}">
+                        <div class="category-card">
+                            <div class="category-image-wrapper">
+                                <img src="{% static 'assets/images/home/equip.jpg' %}" alt="Surgical Equipment">
+                                <div class="category-hover-overlay">
+                                    <span class="hover-btn"><i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <h3 class="category-name">Surgical Equipment</h3>
+                                <span class="category-link">Explore <i class="fas fa-arrow-right ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 
-
-    <!-- Features Section -->
+    <!-- All Section -->
     <section class="features-section">
         <div class="container">
             <div class="section-header">
@@ -729,17 +507,23 @@
                                     {% else %}
                                     <img src="https://placehold.co/600x600/f8f9fa/0cb8b6?text={{ product.name|truncatewords:2 }}" alt="{{ product.name }}">
                                     {% endif %}
+                                    
+                                    {% with second_image=product.images.first %}
+                                        {% if second_image %}
+                                            <img src="{{ second_image.image.url }}" class="img-hover" alt="{{ product.name }}">
+                                        {% else %}
+                                            <img src="{% static 'assets/images/product/prod1.jpg' %}" class="img-hover" alt="{{ product.name }}">
+                                        {% endif %}
+                                    {% endwith %}
+                                    
                                     <span class="product-badge">New</span>
                                 </div>
                                 <div class="product-info">
                                     <div class="product-category">{{ product.category.name }}</div>
                                     <h3 class="product-name">{{ product.name }}</h3>
-                                
-                                    <div class="product-footer">
-                                        <span class="product-sku">SKU: {{ product.sku }}</span>
-                                        <a href="{% url 'product-details' product.slug %}" class="btn-view-product">
-                                            View Details <i class="fas fa-arrow-right"></i>
-                                        </a>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{% url 'product-details' product.slug %}" class="btn-shop-action p-1"><i class="fas fa-eye me-1"></i> View</a>
+                                        <a href="https://wa.me/1234567890?text=I'm interested in {{ product.name }}" class="btn-shop-action p-1"><i class="fab fa-whatsapp me-2"></i> Enquiry</a>
                                     </div>
                                 </div>
                             </div>
@@ -752,7 +536,7 @@
                 <div class="swiper-button-prev latest-prev"></div>
             </div>
 
-            <div class="text-center mt-5">
+            <div class="text-center mt-3">
                 <a href="{% url 'products' %}" class="btn btn-lg circle btn-theme effect">View All Products</a>
             </div>
         </div>
@@ -783,8 +567,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var baseSwiperOptions = {
-                slidesPerView: 1,
-                spaceBetween: 30,
+                slidesPerView: 2,
+                spaceBetween: 10,
                 loop: true,
                 autoplay: {
                     delay: 3000,
@@ -793,6 +577,7 @@
                 breakpoints: {
                     640: {
                         slidesPerView: 2,
+                        spaceBetween: 30,
                     },
                     768: {
                         slidesPerView: 3,

@@ -5,44 +5,37 @@
 <head>
     {% include 'components/header.html' %}
     <title>Shop - Medofusion Surgical Supplies</title>
+    <style>
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 
 <body>
 
     {% include 'components/navbar.html' %}
 
-    <!-- Start Breadcrumb -->
-    <!-- Start Breadcrumb -->
-    <div class="breadcrumb-area text-center shadow dark text-light bg-fixed">
-        <div class="banner-background" style="background-image: url('{% static 'assets/images/banner/shop.png' %}'); background-size: cover; background-position: center;">
-            <div class="blue-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h1>Our Products</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li class="active">Products</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Start Shop Area -->
-    <div class="shop-area default-padding">
+    <div class="shop-area p-2">
         <div class="container">
+            <div class="section-header">
+                <h2 class="section-title mb-0">Our <span style="color: #0cb8b6;">Products</span></h2>
+                <p class="section-subtitle">Explore our comprehensive range of medical equipment and solutions</p>
+            </div>
             <div class="row">
+
                 <!-- Sidebar -->
-                <div class="col-lg-3">
+                <div class="col-lg-3 mb-3">
                     <aside class="sidebar">
                         <!-- Categories Widget -->
                         <div class="sidebar-item category">
-                            <div class="title">
+                            <div class="title" onclick="toggleCategories()" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                                 <h4>Categories</h4>
+                                <i class="fas fa-chevron-down d-lg-none" id="cat-chevron"></i>
                             </div>
-                            <div class="sidebar-info">
+                            <div class="sidebar-info" id="category-list">
                                 <ul>
                                     <li><a href="{% url 'products' %}">All Products</a></li>
                                     {% for cat in categories %}
@@ -51,6 +44,23 @@
                                 </ul>
                             </div>
                         </div>
+                        
+                        <script>
+                            function toggleCategories() {
+                                if (window.innerWidth < 992) {
+                                    const list = document.getElementById('category-list');
+                                    const chevron = document.getElementById('cat-chevron');
+                                    
+                                    if (list.style.display === 'block') {
+                                        list.style.display = 'none';
+                                        chevron.style.transform = 'rotate(0deg)';
+                                    } else {
+                                        list.style.display = 'block';
+                                        chevron.style.transform = 'rotate(180deg)';
+                                    }
+                                }
+                            }
+                        </script>
                     </aside>
                 </div>
 
@@ -61,23 +71,32 @@
                     <div class="row">
                         {% if products %}
                             {% for product in products %}
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="product-item">
-                                    <div class="thumb">
+                            <div class="col-6 col-md-4 col-lg-4 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
                                         {% if product.image %}
                                         <img src="{{ product.image.url }}" alt="{{ product.name }}">
                                         {% else %}
-                                        <img src="https://placehold.co/350x350/0cb8b6/ffffff?text=No+Image" alt="{{ product.name }}">
+                                        <img src="https://placehold.co/600x600/f8f9fa/0cb8b6?text={{ product.name|truncatewords:2 }}" alt="{{ product.name }}">
                                         {% endif %}
-                                        <div class="overlay">
-                                            <a href="{% url 'product-details' product.slug %}"><i class="fas fa-eye"></i></a>
-                                        </div>
+                                        
+                                        {% with second_image=product.images.first %}
+                                            {% if second_image %}
+                                                <img src="{{ second_image.image.url }}" class="img-hover" alt="{{ product.name }}">
+                                            {% else %}
+                                                <img src="{% static 'assets/images/product/prod1.jpg' %}" class="img-hover" alt="{{ product.name }}">
+                                            {% endif %}
+                                        {% endwith %}
+                                        
+                                        <!-- Optional: Add New/Featured badge logic here if needed -->
+                                        <!-- <span class="product-badge">New</span> -->
                                     </div>
-                                    <div class="info">
-                                        <h4><a href="{% url 'product-details' product.slug %}">{{ product.name }}</a></h4>
+                                    <div class="product-info">
+                                        <div class="product-category">{{ product.category.name }}</div>
+                                        <h3 class="product-name">{{ product.name }}</h3>
                                         <div class="d-flex justify-content-between">
-                                            <a href="{% url 'product-details' product.slug %}" class="shop-btn btn-theme mr-2">View Details</a>
-                                            <a href="https://wa.me/1234567890?text=I'm interested in {{ product.name }}" class="shop-btn btn-theme"><i class="fab fa-whatsapp mr-2"></i> Enquiry</a>
+                                            <a href="{% url 'product-details' product.slug %}" class="btn-shop-action p-1"><i class="fas fa-eye me-1"></i> View</a>
+                                            <a href="https://wa.me/1234567890?text=I'm interested in {{ product.name }}" class="btn-shop-action p-1"><i class="fab fa-whatsapp me-2"></i> Enquiry</a>
                                         </div>
                                     </div>
                                 </div>
@@ -166,67 +185,7 @@
 </html>
 
 <style>
-.product-item {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-.product-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-.product-item .thumb {
-    position: relative;
-    overflow: hidden;
-}
-.product-item .thumb img {
-    width: 100%;
-    transition: all 0.3s ease;
-}
-.product-item:hover .thumb img {
-    transform: scale(1.1);
-}
-.product-item .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-.product-item:hover .overlay {
-    opacity: 1;
-}
-.product-item .overlay a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    background: #0cb8b6;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-}
-.product-item .info {
-    padding: 15px;
-}
-.product-item .info h4 {
-    margin-bottom: 10px;
-}
-.product-item .info h4 a {
-    color: #333;
-    font-size: 16px;
-}
-.product-item .info .price {
-    margin: 11px 0;
-}
-.product-item .info .price .amount {
-    color: #108785;
-    font-size: 20px;
-    font-weight: bold;
-}
+/* Old product-item styles removed */
 .shop-top-bar {
     background: #f8f9fa;
     padding: 15px 20px;
@@ -237,9 +196,6 @@
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
-}
-.sidebar-item {
-    margin-bottom: 30px;
 }
 .sidebar-item .title h4 {
     margin-bottom: 15px;
@@ -261,5 +217,14 @@
 }
 .sidebar-item.category ul li a span {
     color: #999;
+}
+
+@media (max-width: 991px) {
+    #category-list {
+        display: none;
+    }
+    #cat-chevron {
+        transition: transform 0.3s ease;
+    }
 }
 </style>
